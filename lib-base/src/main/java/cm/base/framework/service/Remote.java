@@ -7,6 +7,7 @@ import java.io.File;
 import java.util.concurrent.TimeUnit;
 import cm.base.framework.base.BaseApplication;
 import cm.base.framework.service.api.UserApi;
+import cm.base.framework.service.compont.LoggingInterceptor;
 import okhttp3.Cache;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -18,7 +19,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class Remote {
 
-    public static final String BASE_URL = "http://www.baidu.com";
+    public static final String BASE_URL = "http://www.weather.com.cn/data/";
     public static final String cacheFileName = "cache_response";
     private static final long RESPONSE_CACHE_SIZE = 10 * 1024 * 1024L;
     private static final long HTTP_CONNECT_TIMEOUT = 10L;
@@ -32,6 +33,8 @@ public class Remote {
             synchronized (Remote.class) {
                 if (adapter == null) {
                     Gson gson = new GsonBuilder().setDateFormat("yyyy'-'MM'-'dd'T'HH':'mm':'ss'.'SSS'Z'").create();
+                    LoggingInterceptor loggingInterceptor = new LoggingInterceptor();
+                    loggingInterceptor.setLevel(LoggingInterceptor.Level.ALL);
 
                     //config OkHttp
                     OkHttpClient okHttpClient
@@ -42,6 +45,7 @@ public class Remote {
                             .connectTimeout(HTTP_CONNECT_TIMEOUT, TimeUnit.SECONDS)
                             .writeTimeout(HTTP_WRITE_TIMEOUT, TimeUnit.SECONDS)
                             .readTimeout(HTTP_READ_TIMEOUT, TimeUnit.SECONDS)
+                            .addInterceptor(loggingInterceptor)//设置日志打印
                             .build();
 
                     //create retrofit
