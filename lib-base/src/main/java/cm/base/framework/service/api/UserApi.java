@@ -11,6 +11,8 @@ import rx.Observable;
  */
 public interface UserApi {
 
+
+    //定义网络接口
     @GET("sk/101190408.html")
     @Headers({
             "Accept: text",

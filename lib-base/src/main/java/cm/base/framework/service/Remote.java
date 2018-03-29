@@ -19,8 +19,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class Remote {
 
-    public static final String BASE_URL = "http://www.weather.com.cn/data/";
-    public static final String cacheFileName = "cache_response";
+    public static final String TAG = "NetworkReqeust";
+    private static final String BASE_URL = "http://www.weather.com.cn/data/";
+    private static final String cacheFileName = "cache_response";
     private static final long RESPONSE_CACHE_SIZE = 10 * 1024 * 1024L;
     private static final long HTTP_CONNECT_TIMEOUT = 10L;
     private static final long HTTP_READ_TIMEOUT = 30L;

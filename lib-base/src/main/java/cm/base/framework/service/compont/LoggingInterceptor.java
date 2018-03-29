@@ -1,13 +1,12 @@
 package cm.base.framework.service.compont;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
-
 import java.io.IOException;
 import java.util.Set;
 
+import cm.base.framework.service.Remote;
 import cm.base.framework.service.api.bean.Weather;
+import cm.base.framework.utils.L;
 import okhttp3.Headers;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
@@ -22,7 +21,6 @@ import okhttp3.ResponseBody;
 
 public class LoggingInterceptor implements Interceptor {
 
-    private final String TAG = "LoggingInterceptor";
     private Level level;
 
     public void setLevel(Level level){
@@ -30,17 +28,15 @@ public class LoggingInterceptor implements Interceptor {
     }
 
     public void log(String msg){
-        Log.i(TAG, msg);
+        L.i(Remote.TAG, msg);
     }
 
     public enum Level{
         NONE, ALL
     }
 
-
     @Override
     public Response intercept(Chain chain) throws IOException {
-
         Request request = chain.request();
         if (level == Level.NONE) {
             return chain.proceed(request);
@@ -77,7 +73,6 @@ public class LoggingInterceptor implements Interceptor {
         tmpResponse.setMsg("request success");
         tmpResponse.setData(new Gson().fromJson(bodyContentStr, Weather.class));
         String gsonStr = new Gson().toJson(tmpResponse);
-
         log("tmp result: "+gsonStr);
 
 
