@@ -12,21 +12,6 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
-//    signingConfigs {//签名配置
-//        release {//发布版签名配置
-//            storeFile file('./tv_keystore')//密钥文件路径
-//            storePassword '709394'//密钥文件密码
-//            keyAlias 'iptv'//key别名
-//            keyPassword '709394'//key密码
-//        }
-//        debug {//debug版签名配置
-//            storeFile file('./tv_keystore')//密钥文件路径
-//            storePassword '709394'//密钥文件密码
-//            keyAlias 'iptv'//key别名
-//            keyPassword '709394'//key密码
-//        }
-//    }
-
     buildTypes {
         release {
             minifyEnabled false
