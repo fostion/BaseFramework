@@ -4,6 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="cn.base.demo.MainActivity">
 
 
@@ -11,13 +12,49 @@
         android:id="@+id/btnStart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="开始"/>
+        android:text="开始" />
 
     <Button
         android:id="@+id/btnStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="停止"/>
+        android:text="停止" />
 
+
+    <Button
+        android:id="@+id/btnOpen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="打开应用" />
+
+    <Button
+        android:id="@+id/btnId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ID打开" />
+
+    <Button
+        android:id="@+id/btnNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="数字打开" />
+
+    <Button
+        android:id="@+id/btnName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="频道名打开" />
+
+    <Button
+        android:id="@+id/btnPre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向上换台" />
+
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="向下换台" />
 
 </LinearLayout>

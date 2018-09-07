@@ -1,6 +1,8 @@
 package cm.base.framework.base;
 
 import android.app.Application;
+
+import cm.base.framework.service.DBHelper;
 import cm.base.framework.service.Local;
 
 /**
@@ -23,6 +25,7 @@ public class BaseApplication extends Application {
     private void initTools() {
         //缓存
         Local.init(getApplicationContext());
+        DBHelper.getInstance().init(this);
     }
 
 }

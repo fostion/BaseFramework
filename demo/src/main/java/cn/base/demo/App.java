@@ -1,5 +1,7 @@
 package cn.base.demo;
 
+import android.app.Application;
+
 import cm.base.framework.base.BaseApplication;
 
 /**
@@ -8,4 +10,10 @@ import cm.base.framework.base.BaseApplication;
 
 public class App extends BaseApplication {
 
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+
+    }
 }
