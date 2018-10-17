@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import cn.base.demo.greendaodemo.GreenDaoActivity;
 import cn.base.demo.login.LoginActivity;
+import cn.base.demo.tvrecyclerview.DemoActivity;
 
 public class MainActivity extends Activity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Intent intent = new Intent(this, GreenDaoActivity.class);
+        Intent intent = new Intent(this, DemoActivity.class);
         startActivity(intent);
         finish();
     }

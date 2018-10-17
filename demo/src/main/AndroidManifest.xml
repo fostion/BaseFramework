@@ -24,6 +24,7 @@
         </activity>
 
         <activity android:name=".greendaodemo.GreenDaoActivity" />
+        <activity android:name=".tvrecyclerview.DemoActivity" />
 
 
     </application>
